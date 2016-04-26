@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="600" height="300" style="background-color: #000">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+
+<form action="index.html" method="get">
+  ax: <input type="text" id="ax"><br>
+  ay <input type="text" id="ay"><br>
+  bx <input type="text" id="bx"><br>
+  by <input type="text" id="by"><br>
+  <input type="button" value="teken lijn" onclick="leesInput()">
+</form>
+<br>
+<form action="index.html" method="get">
+  ax: <input type="text" id="ax2"><br>
+  ay <input type="text" id="ay2"><br>
+  bx <input type="text" id="bx2"><br>
+  by <input type="text" id="by2"><br>
+  <input type="button" value="teken lijn" onclick="leesInput2()">
+  <input type="button" value="wis canvas" onclick="clear()">
+</form>
+
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    function leesInput() {
+        ax = document.getElementById("ax").value;
+        ay = document.getElementById("ay").value;
+        bx = document.getElementById("bx").value;
+        by = document.getElementById("by").value;
+        console.log("hoi");
+        line(ax, ay, bx, by, "#0000ff");
+    }
+    function leesInput2() {
+        ax = document.getElementById("ax2").value;
+        ay = document.getElementById("ay2").value;
+        bx = document.getElementById("bx2").value;
+        by = document.getElementById("by2").value;
+        console.log("hoi");
+        line(ax, ay, bx, by, "#ff3300");
+    }
+
+    function line(ax, ay, bx, by, kleur){
+    ctx.strokeStyle = kleur;
+    ctx.beginPath();
+    ctx.moveTo(ax, ay);
+    ctx.lineTo(bx, by);
+    ctx.stroke();
+    ctx.closePath();
+    console.log("haai");
+}
+    function clear() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      console.log("wis");
+    }
+</script>
+
+</body>
+</html>
