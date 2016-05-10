@@ -6,22 +6,23 @@
 Your browser does not support the HTML5 canvas tag.</canvas>
 
 
-<form action="index.html" method="get">
+<fieldset><form action="index.html" method="get">
   ax: <input type="text" id="ax"><br>
   ay <input type="text" id="ay"><br>
   bx <input type="text" id="bx"><br>
   by <input type="text" id="by"><br>
   <input type="button" value="teken lijn" onclick="leesInput()">
-</form>
+</form></fieldset>
 <br>
-<form action="index.html" method="get">
+<fieldset><form action="index.html" method="get">
   ax: <input type="text" id="ax2"><br>
   ay <input type="text" id="ay2"><br>
   bx <input type="text" id="bx2"><br>
   by <input type="text" id="by2"><br>
   <input type="button" value="teken lijn" onclick="leesInput2()">
-  <input type="button" value="wis canvas" onclick="clear()">
-</form>
+  <input type="button" value="wis canvas" onclick="clearCanvas()">
+</form></fieldset>
+
 
 <script>
     var canvas = document.getElementById("myCanvas");
@@ -53,8 +54,8 @@ Your browser does not support the HTML5 canvas tag.</canvas>
     ctx.closePath();
     console.log("haai");
 }
-    function clear() {
-    //  context.clearRect(0, 0, canvas.width, canvas.height);
+    function clearCanvas() {
+ ctx.clearRect(0, 0, canvas.width, canvas.height);
       console.log("wis");
     }
 </script>
